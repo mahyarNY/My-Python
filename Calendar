@@ -1,0 +1,60 @@
+"""In this program, I am going to build a basic calendar which users can interact with. They can view, add, update, or delete an event."""
+from time import sleep, strftime
+# calenders need to access time frequently
+user_name = "Mahyar"
+calender = {}
+def welcome():
+  print "What would you like to do?"
+  print user_name + " welcome to the Calendar Program ..."
+  print "The calendar is opening ..."
+  sleep(1)
+  print "Today is: " + strftime("%A %B %d, %y")
+  print "The current time is: " + strftiem("%H %M %S")
+  sleep(1)
+def start_calendar():
+  welcome()
+  start = True
+  while start:
+    user_choice = raw_input("A to add, U to update, D to delete, V to view, X to exit: ")
+    user_choice.upper()
+    if user_choice == "V":
+      if len(calendar.keys())<1:
+        print "Calendar is empty"
+      else: 
+        print calendar
+    elif user_choice == "U":
+      date = raw_input("What date? ")
+      update = raw_input("Enter the update: ")
+      calendar[date] = update
+      # better check valid or override
+      print "The update is successfully finished."
+      print calendar
+    elif user_choice == "A":
+      event = raw_input("Enter event: ")
+      date = raw_input("Enter date (MM/DD/YYY): ")
+      year_now = int(strftime("%y"))
+      year_input =int(date[:4])
+      if len(date) > 10 or year_input < year_now:
+        print "Invalid date"
+        try_again = raw_input("Try Again? Y for yes, N for no: ")
+        try_again.upper()
+        if try_again == "Y":
+          continue
+        else:
+          start = False
+      else:
+        event = calendar(date)
+        print "The event is successfully added!"
+        print calendar
+    elif user_choice == "D":
+      if len(calendar.keys()) < 1:
+        print "Calendar is empty."
+      else:
+        event = raw_input("What event? ")
+        for date in calendar.keys():
+          if calendar[date]== event:
+            
+          
+         
+      
+      
