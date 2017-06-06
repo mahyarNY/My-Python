@@ -1,4 +1,4 @@
-"""In this program, I am going to build a basic calendar which users can interact with. They can view, add, update, or delete an event."""
+"""In this project, I am going to build a basic calendar which users can interact with. They can view, add, update, or delete an event."""
 from time import sleep, strftime
 # calenders need to access time frequently
 user_name = "Mahyar"
