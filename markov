@@ -1,9 +1,38 @@
+#fetch_data
+from urllib2 import urlopen
+from bs4 import BeautifulSoup
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+url = "http://github.com/Codecademy/markov_python/blob/master/README.md"
+
+req = urlopen(url)
+
+html = req.read()
+
+#soup = bs4.BeautifulSoup(raw)
+
+soup = BeautifulSoup(html, 'html.parser')
+
+#print(soup.prettify())
+
+request1 = soup.get_text()
+
+g = open("data.txt", "w")
+
+g.write (str(request1))
+
+g.close()
+
+#print(soup.get_text())
+
+#run_file:
+
 from markov_python.cc_markov import MarkovChain
 import fetch_data
 
 mc = MarkovChain()
-
-
 
 mc.add_file('C:\Python27\environments\markov_chain\data.txt')
 
