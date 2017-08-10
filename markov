@@ -1,0 +1,12 @@
+from markov_python.cc_markov import MarkovChain
+import fetch_data
+
+mc = MarkovChain()
+
+
+
+mc.add_file('C:\Python27\environments\markov_chain\data.txt')
+
+#mc.add_string("red")
+
+print mc.generate_text(12)
